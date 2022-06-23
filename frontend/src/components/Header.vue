@@ -7,7 +7,7 @@
             <img class="h-10 w-auto" src="https://mello.gg/img/svg/logo.svg">
           </router-link>
           <div class="hidden ml-10 space-x-8 lg:block">
-            <router-link to="/employees" class="text-base font-medium text-white hover:text-indigo-50">
+            <router-link to="/" class="text-base font-medium text-white hover:text-indigo-50">
               Employees
             </router-link>
           </div>
@@ -15,10 +15,6 @@
       </div>
       <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
         <router-link to="/" class="text-base font-medium text-white hover:text-indigo-50">
-          Home
-        </router-link>
-
-        <router-link to="/employees" class="text-base font-medium text-white hover:text-indigo-50">
           Employees
         </router-link>
       </div>

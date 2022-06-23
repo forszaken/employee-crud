@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import EmployeesList from "@/views/employees/EmployeesList";
+import EmployeeCreate from "@/components/employees/EmployeeCreate";
+import EmployeeUpdate from "@/components/employees/EmployeeUpdate";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'employees',
+    component: EmployeesList
+  },
+  {
+    path: '/employees/create',
+    name: 'employees.create',
+    component: EmployeeCreate
+  },
+  {
+    path: '/employees/update/:id',
+    name: 'employees.update',
+    component: EmployeeUpdate
   }
 ]
 
