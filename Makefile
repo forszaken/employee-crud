@@ -28,3 +28,4 @@ perm:
 	sudo chown ${USER}:${USER} backend/app/ -R
 	sudo chown ${USER}:${USER} backend/config/ -R
 	sudo chown ${USER}:${USER} backend/database/ -R
+	sudo chown ${USER}:${USER} backend/vendor/ -R

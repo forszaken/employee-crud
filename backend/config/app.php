@@ -1,5 +1,7 @@
 <?php
 
+use Modules\Employee\Infrastructure\Providers\EmployeeServiceProvider;
+
 return [
 
     /*
@@ -174,6 +176,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /**
+         * Module Provider
+         */
+        EmployeeServiceProvider::class
 
     ],
 

@@ -5,38 +5,46 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Http\Resources\EmployeeResource;
-use App\Models\Employee;
-use Illuminate\Http\Request;
+use Modules\Employee\Application\Services\Employee\EmployeeService;
 
-class EmployeeController extends Controller
+class EmployeeController
 {
-    public function index()
+    private EmployeeService $employeeService;
+
+    public function __construct(EmployeeService $employeeService)
     {
-        return new EmployeeResource(Employee::all());
+        $this->employeeService = $employeeService;
     }
 
-    public function show(Employee $employee)
+    public function index()
     {
-        return new EmployeeResource($employee);
+        return new EmployeeResource($this->employeeService->getList()->all());
+    }
+
+    public function show(string $uuid)
+    {
+        $employeeDto = $this->employeeService->getByUuid($uuid);
+
+        return new EmployeeResource(get_object_vars($employeeDto));
     }
 
     public function store(StoreEmployeeRequest $request)
     {
-        $employee = Employee::create($request->validated());
+        $employee = $this->employeeService->create($request);
 
-        return new EmployeeResource($employee);
+        return new EmployeeResource(get_object_vars($employee));
     }
 
-    public function update(UpdateEmployeeRequest $request, Employee $employee)
+    public function update(string $uuid, UpdateEmployeeRequest $request)
     {
-        $employee->update($request->validated());
+        $employee = $this->employeeService->update($request, $uuid);
 
-        return new EmployeeResource($employee);
+        return new EmployeeResource(get_object_vars($employee));
     }
 
-    public function destroy(Employee $employee)
+    public function destroy(string $uuid)
     {
-        $employee->delete();
+        $this->employeeService->delete($uuid);
 
         return response()->noContent();
     }

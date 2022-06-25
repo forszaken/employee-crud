@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('employees', \App\Http\Controllers\EmployeeController::class);
+
+//Route::get('/employees', [\App\Http\Controllers\EmployeeController::class, 'index']);
