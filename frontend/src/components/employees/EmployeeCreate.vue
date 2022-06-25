@@ -24,8 +24,28 @@
                         <div v-if="errors && errors.name" class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
                           {{errors.name[0]}}
                         </div>
+                      </div>
 
+                      <div class="col-span-6 sm:col-span-3">
+                        <label for="surname" class="block text-sm font-medium text-gray-700">
+                          Surname
+                        </label>
+                        <input v-model="employee.surname" type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
 
+                        <div v-if="errors && errors.surname" class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                          {{errors.surname[0]}}
+                        </div>
+                      </div>
+
+                      <div class="col-span-6 sm:col-span-3">
+                        <label for="patronymic" class="block text-sm font-medium text-gray-700">
+                          Patronymic
+                        </label>
+                        <input v-model="employee.patronymic" type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+
+                        <div v-if="errors && errors.patronymic" class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                          {{errors.patronymic[0]}}
+                        </div>
                       </div>
 
                       <div class="col-span-6 sm:col-span-3">
