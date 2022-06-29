@@ -1,13 +1,9 @@
-# TestWork-72822
-
-Запустить можно через make up.
 1. make up
-2. .env backend (креды ниже)
-3. make ci в корне проекта
-4. npm install в frontend
+2. .env backend
+3. make ci (backend)
+4. npm install (frontend)
 
-Если нет Gnu Make, то внутри Makefile есть все Docker-команды для поднятия нужных контейнеров, можно их ввести.
-Для .env, доступы к бд:
+.env:
 ```
 DB_CONNECTION=mysql
 DB_HOST=database
